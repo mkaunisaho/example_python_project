@@ -1,1 +1,1 @@
-__all__ = ["writer"]
+__all__ = ["writer", "logging"]

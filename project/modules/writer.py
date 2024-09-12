@@ -1,8 +1,10 @@
 import os
+from modules import logging
 from dotenv import load_dotenv
 
 load_dotenv()
 
+logging.setup_logging()
 
 class Writer():
     def __init__(self):
@@ -11,6 +13,8 @@ class Writer():
         pass
 
     def some_function(self):
+        logger = logging.getLogger("Writer.some_function()")
+        logger.info("Logging some info")
         # do something
         pass
 
@@ -38,4 +42,4 @@ class Writer():
             print(f.read())
     
     def print_env_var(self) -> None:
-        print(os.getenv("SUPER_SECRET_KEY"))
+        print(os.getenv("PASSWORD"))
